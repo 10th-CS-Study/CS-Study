@@ -34,6 +34,9 @@ Insertion Sort는 **2번째 원소부터 시작하여 그 앞(왼쪽)의 원소�
 
 <br>
 
+![image](https://github.com/CS-Stuey/CS-Study/assets/50294908/bc944b15-54d4-4257-9398-7e401b38e774)
+
+
 ## Java Code (Ascending)
 
 ```java
