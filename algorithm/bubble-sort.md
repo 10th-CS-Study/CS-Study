@@ -153,7 +153,7 @@ Bubble Sort에 대해 알아보았습니다.
 
 <br>
 
-## 부록
+## 부록: 개선된 Bubble Sort
 
 ```java
 package study;
