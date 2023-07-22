@@ -24,10 +24,10 @@
 
 | 이름   | 주제                                      |
 | ------ | ---------------------------------------------- |
-| 이원주 | [선택 정렬]() |
-| 이승현 | [퀵 정렬]() |
-| 최호조 | [거품 정렬]() |
-| 정경리 | [삽입 정렬]() |
+| 이원주 | [선택 정렬](https://github.com/CS-Stuey/CS-Study/blob/main/algorithm/selection-sort.md) |
+| 이승현 | [퀵 정렬](https://github.com/CS-Stuey/CS-Study/blob/main/algorithm/quick-sort.md) |
+| 최호조 | [거품 정렬](https://github.com/CS-Stuey/CS-Study/blob/main/algorithm/bubble-sort.md) |
+| 정경리 | [삽입 정렬](https://github.com/CS-Stuey/CS-Study/blob/main/algorithm/Insertion%20Sort.md) |
 
 ### 알고리즘 공통 과제
 * [백준 단계별로 풀어보기 - 1차원 배열](https://www.acmicpc.net/step/6)
