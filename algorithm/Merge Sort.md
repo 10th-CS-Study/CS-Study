@@ -113,6 +113,7 @@ public static void merge(int[] array, int left, int mid, int right) {
 > 배열[O(1)] vs LinkedList[O(n)] 
 
 
+![image](https://github.com/10th-CS-Study/CS-Study/assets/50294908/f99c7a9c-5093-43c0-be31-5053934bd6bc)
 
 
 
