@@ -17,6 +17,7 @@
 
 ## 학습 주제
 학습주제는 [gyoogle](https://github.com/gyoogle/tech-interview-for-developer)의 Algorithm 파트를 참고했습니다.
+[CS 참고 사이트](https://gyoogle.dev/blog/)
 
 
 ## 스터디 진행 현황
