@@ -53,10 +53,10 @@
 
 | 이름   | 주제                                      |
 | ------ | ---------------------------------------------- |
-| 이원주 | [이진 탐색]() |
-| 이승현 | [DFS]() |
-| 최호조 | [BFS]() |
-| 정경리 | [병합 정렬]() |
+| 이원주 | [이진 탐색](https://github.com/10th-CS-Study/CS-Study/blob/main/algorithm/binary-search.md) |
+| 이승현 | [DFS](https://github.com/10th-CS-Study/CS-Study/blob/main/algorithm/DFS.md) |
+| 최호조 | [BFS](https://github.com/10th-CS-Study/CS-Study/blob/main/algorithm/BFS.md) |
+| 정경리 | [병합 정렬](https://github.com/10th-CS-Study/CS-Study/blob/main/algorithm/Merge%20Sort.md) |
 
 ### 알고리즘 공통 과제
 * [백준 단계별로 풀어보기 - 심화1 ](https://www.acmicpc.net/step/52)
