@@ -18,6 +18,8 @@ Tree의 특성을 이해하자
 그림 상 데이터 1을 가진 노드가 `루트(Root) 노드`다.
 
 모든 노드들은 0개 이상의 자식(Child) 노드를 갖고 있으며 보통 부모-자식 관계로 부른다.
+![image](https://github.com/10th-CS-Study/CS-Study/assets/50294908/c335e767-2496-4134-a0c4-5d4254d8bef9)
+![image](https://github.com/10th-CS-Study/CS-Study/assets/50294908/01e7d5b9-15d2-4eb3-af45-c5ae05181bac)
 
 <br>
 
