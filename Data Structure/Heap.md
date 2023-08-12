@@ -70,7 +70,7 @@
 - 부모 노드의 키 값 < 자식 노드의 키 값
 - 루트 노드 : 키 값이 가장 작은 노드
 
-<p style="text-align:center; margin-top:3rem" >
+<p align="center" >
  <img src="./resources/heap_max_min.png" alt="heap-max-min">
 </p>
 
@@ -99,7 +99,7 @@
 부모 index = (자식 index) / 2
 ```
 
-<p style="text-align:center; margin-top:3rem;" >
+<p align="center" >
  <img src="./resources/heap_parent_child.png" alt="heap-max-min">
 </p>
 
