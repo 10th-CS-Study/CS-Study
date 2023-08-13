@@ -73,13 +73,28 @@
 
 | 이름   | 주제                        |
 | ------ | --------------------------- |
-| 이원주 | [힙(Heap)]()                |
-| 이승현 | [Linked List]()             |
-| 최호조 | [스택&큐]()                 |
-| 정경리 | [트리(Tree)&트라이(Trie)]() |
+| 이원주 | [힙(Heap)](https://github.com/10th-CS-Study/CS-Study/blob/main/Data%20Structure/Heap.md)                |
+| 이승현 | [Linked List](https://github.com/10th-CS-Study/CS-Study/blob/main/Data%20Structure/Linked%20List.md)             |
+| 최호조 | [스택&큐](https://github.com/10th-CS-Study/CS-Study/blob/main/Data%20Structure/Stack_Queue.md)                 |
+| 정경리 | [트리(Tree)&트라이(Trie)](https://github.com/10th-CS-Study/CS-Study/blob/main/Data%20Structure/Tree%20%26%20Trie.md) |
 
 ### 알고리즘 공통 과제
 
 - [백준 단계별로 풀어보기 - 일반 수학 1 ](https://www.acmicpc.net/step/8)
 - [백준 단계별로 풀어보기 - 약수, 배수와 소수 ](https://www.acmicpc.net/step/10)
 - [백준 단계별로 풀어보기 - 기하: 직사각형과 삼각형 ](https://www.acmicpc.net/step/50)
+
+<br>
+
+### 📅 2023/08/20 Study
+
+| 이름   | 주제                        |
+| -----| --------------------------|
+| 이원주 | 그래프 탐색 알고리즘 (DFS & BFS) |
+| 이승현 | 그래프 탐색 알고리즘 (DFS & BFS) |
+| 최호조 | 그래프 탐색 알고리즘 (DFS & BFS) |
+| 정경리 | 그래프 탐색 알고리즘 (DFS & BFS) |
+
+### 알고리즘 공통 과제
+
+- [백준 단계별로 풀어보기 - 부르트 포스 ](https://www.acmicpc.net/step/22)
