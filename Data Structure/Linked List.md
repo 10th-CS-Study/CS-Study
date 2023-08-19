@@ -9,7 +9,7 @@
 2. [왜 Linked List를 사용하나?](#왜-linked-list를-사용하나) 
 3. [장점](#장점)
 4. [단점](#단점)
-5. [스택으로 구현한 연결리스트 (java)](#스택으로-구현한-연결리스트-java)
+5. [JAVA로 연결리스트 구현해보기](#java로-연결리스트-구현해보기)
 
 <br>
 
@@ -54,119 +54,153 @@
 
 <br>
 
-## 스택으로 구현한 연결리스트 (java)
+##  JAVA로 연결리스트 구현해보기
 
 ### 노드 구현은 아래와 같이 데이터와 다음 노드에 대한 참조로 나타낼 수 있다
 
 ```java
-public class Node<T> {
-	private T data; // 해당 노드의 데이터를 저장
-	private Node<T> link; // 해당 노드와 연결된 노드를 저장
-	
-	public Node(T data, Node<T> link) {
-		super();
-		this.data = data;
-		this.link = link;
-	}
-
-	public Node(T data) {
-		super();
-		this.data = data;
-	}
-
-	public T getData() {
+// List를 구성하는 Node 클래스
+public class Node {
+    Node next;
+    String data;
+    public Node(String data) {
+        this.data = data;
+    }
+	public String getData() {
 		return data;
 	}
-
-	public void setData(T data) {
-		this.data = data;
-	}
-
-
-	public Node<T> getLink() {
-		return link;
-	}
-
-	public void setLink(Node<T> link) {
-		this.link = link;
-	}
-
-    @Override
+	@Override
 	public String toString() {
-		return "Node [data=" + data + ", link=" + link + "]";
+		return "Node [next=" + next + ", data=" + data + "]";
 	}
-}
-```
-
-
-### 인터페이스 구현
-
-```java
-public interface IStack<E> {
-	void push(E e);
-	E pop();
-	E Peek();
-	int size();
-	boolean isEmpty();
 }
 ```
 
 ### 기능 구현
 
 ```java
-import java.util.EmptyStackException;
-
-public class LinkedListStack<E> implements IStack<E> {
-
-	private Node<E> top = null;
-
-	@Override
-	public void push(E e) {
-		top = new Node<>(e, top);
-        // 기존 top을 다음 노드로 참조하고
-        // 입력 받은 값을 data로 하는 새 노드 생성
-        // 새로운 노드를 top으로
-	}
-
-	@Override
-	public E pop() {
-		if(isEmpty()) { // 비어있으면 Exception
-			throw new EmptyStackException();
-		}
-        // 비어있지 않으면 
-        // top위치와 연결되 있던 노드를 top으로
-		Node<E> popNode = top;
-		top = popNode.getLink();
-
-		popNode.setLink(null);
-		
-		return popNode.getData();
-	}
-
-	@Override
-	public E Peek() {
-		if(isEmpty()) {
-			throw new EmptyStackException();
-		}
-		return top.getData(); // top의 data 리턴
-	}
-
-	@Override
-	public int size() {
-		int size = 0;
-         // 연결된 노드가 null이아니면
-		for (Node<E> temp = top; temp != null; temp = temp.getLink()) { 
-			++size; //사이즈 증가
-		}
-		return size;
-	}
-
+	public class LinkedList {
     
-	@Override
-	public boolean isEmpty() {
-		return top==null;
-	}
+	Node head;
+  	Node tail;
+    int size = 0;
+    
+    public void addFirst(String data){
+    	Node newNode = new Node(data); //노드 생성
+        
+        newNode.next = head; //새로운 노드의 다음 노드로 헤드를 지정
+        
+        head = newNode; //head를 새로운 노드로 지정 
+        size++; 
+        
+        if(head.next == null)
+        	tail = head;
+    }
+    
+    public void addLast(String data) { // Node 마지막에 삽입
+        Node newNode = new Node(data); //노드 생성
+    
+    	if(size == 0) //리스트의 노드가 없는 경우, 첫번째 노드로 추가하는 메소드 사용 
+    		addFirst(data); 
+    	else {
+    		tail.next = newNode; //마지막 노드의 다음 노드로 생성한 노드를 지정
+        	tail = newNode; //마지막 노드를 갱신 
+        	size++; 
+    	}
+    }
+    
+    
+    public Object removeFirst() {
+    	Node temp = head; //첫번째 노드를 head로 지정
+        head = temp.next; //head의 값을 두번째 노드로 변경
+        
+        Object returnData = temp.data; //데이터 삭제 전 리턴할 값을 임시 변수에 담아둔다.
+        temp = null;
+        size--;
+        return returnData;
+    }
+    
+    public Object indexremove(int k) {
+    	if(k == 0)
+        	return removeFirst();
+        
+        Node temp = node(k-1); //k-1번째 node를 temp의 값으로 지정 
+        
+        Node todoDeleted = temp.next; 
+        //삭제할 노드를 todoDeleted에 기록
+        // 삭제 노드를 지금 제거하면 삭제 앞 노드와 삭제 뒤 노드를 연결할 수 없다. 
+        
+        temp.next = temp.next.next; 
+        //삭제 앞 노드의 다음 노드로 삭제 뒤 노드를 지정한다. 
+        
+        Object returnData = todoDeleted.data; 
+        //삭제된 데이터를 리턴하기 위해서 returnData에 저장한다. 
+        
+        if(todoDeleted == tail)
+        	tail = temp;
+       	
+        todoDeleted = null;
+        size--;
+        return returnData;
+    }
+    
+    public void removeValue(String data) {
+        if(head == null) {
+            return;
+        }
+        if(head.data.equals(data)) {
+            head = head.next;
+            return;
+        }
+        Node current = head;
+        while(current.next != null) {
+            if(current.next.data.equals(data)) {
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+        }
+    }
+    
+    public int indexOf(Object data){
+    	Node temp = head; //탐색 대상이 되는 노드를 temp로 지정한다. 
+        int index = 0; //탐색 대상의 엘리먼트 
+        
+        while(temp.data != data) { //탐색 값과 탐색 대상의 값을 비교
+        	temp = temp.next;
+            index++;
+            
+            if(temp == null) //더 이상 탐색할 대상이 없다는 것
+            	return -1;
+        }
+        
+        return index;
+    }
+    
+    Node node(int index) {
+    	Node x = head;
+        for(int i = 0; i < index; i++)        
+        	x = x.next;
+        return x;
+     }
+    
+    public int size() {
+    	return size;
+    }
+    
+    public void printList() {
+        Node tempNode = this.head;    // tempNode에 head가 가리키는 첫번째 노드를 할당
+        
+        // tempNode가 null이 아닐 때까지 반복하여 출력
+        while(tempNode != null) {
+            System.out.print(tempNode.getData() + " ");
+            tempNode = tempNode.next;    // temp 노드에 다음 노드(tempNode.next) 할당.
+        }
+        System.out.println();
+    }
 }
+
+
 ```
 
 <br>
@@ -175,3 +209,4 @@ public class LinkedListStack<E> implements IStack<E> {
 
 - [https://gyoogle.dev/blog/computer-science/data-structure/Linked%20List.html](https://gyoogle.dev/blog/computer-science/data-structure/Linked%20List.html)
 - [https://monsieursongsong.tistory.com/8](https://monsieursongsong.tistory.com/8)
+- [https://velog.io/@frombozztoang/Java-Linked-List-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0](https://velog.io/@frombozztoang/Java-Linked-List-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)
