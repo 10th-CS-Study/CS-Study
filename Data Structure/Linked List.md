@@ -79,10 +79,10 @@ public class Node {
 ### 기능 구현
 
 ```java
-	public class LinkedList {
+public class LinkedList {
     
-	Node head;
-  	Node tail;
+    Node head;
+    Node tail;
     int size = 0;
     
     public void addFirst(String data){
